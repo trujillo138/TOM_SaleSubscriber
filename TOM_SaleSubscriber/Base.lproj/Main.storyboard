@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mCz-g1-shM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Marketplace-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="MarketplaceViewController" customModule="TOM_SaleSubscriber" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="So2-75-qXk">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="So2-75-qXk" secondAttribute="trailing" id="BQ6-eW-TJX"/>
+                            <constraint firstItem="So2-75-qXk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rUi-SW-bu8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="So2-75-qXk" secondAttribute="bottom" id="y2P-YX-gWI"/>
+                            <constraint firstItem="So2-75-qXk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zvB-Mn-SMF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Marketplace" id="tHw-Da-Vbg"/>
+                    <connections>
+                        <outlet property="tableView" destination="So2-75-qXk" id="DQY-hj-2yk"/>
+                        <segue destination="RCG-bt-aAG" kind="show" identifier="ShowMerchantDetail" id="sBh-0B-Ie6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="999.20000000000005" y="92.203898050974516"/>
+        </scene>
+        <!--Merchant View Controller-->
+        <scene sceneID="3Tr-pn-dv3">
+            <objects>
+                <viewController id="RCG-bt-aAG" customClass="MerchantViewController" customModule="TOM_SaleSubscriber" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ffs-hJ-cWH"/>
+                        <viewControllerLayoutGuide type="bottom" id="rNt-rD-uR1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="A0e-Tf-MQo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KDb-zZ-deC">
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="KDb-zZ-deC" secondAttribute="height" multiplier="3:2" id="wkN-ZH-lNF"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEq-eC-Qer">
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <state key="normal" title="Subscribe to RSS"/>
+                                <connections>
+                                    <action selector="subscribeButtonPressed:" destination="RCG-bt-aAG" eventType="touchUpInside" id="Zqt-Tl-y2o"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gsZ-Rk-odd">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkG-9k-Tm3" customClass="CountdownView" customModule="TOM_SaleSubscriber" customModuleProvider="target">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dkG-9k-Tm3" secondAttribute="height" multiplier="2.5:1" id="GME-Z0-HVX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="gsZ-Rk-odd" secondAttribute="trailing" id="EUT-5Y-dYT"/>
+                            <constraint firstItem="gsZ-Rk-odd" firstAttribute="top" secondItem="KDb-zZ-deC" secondAttribute="bottom" constant="8" symbolic="YES" id="GJe-pN-pgY"/>
+                            <constraint firstAttribute="trailing" secondItem="KDb-zZ-deC" secondAttribute="trailing" id="HeM-Qr-3xU"/>
+                            <constraint firstItem="rNt-rD-uR1" firstAttribute="top" secondItem="OEq-eC-Qer" secondAttribute="bottom" constant="20" id="N5V-S0-OSW"/>
+                            <constraint firstItem="KDb-zZ-deC" firstAttribute="leading" secondItem="A0e-Tf-MQo" secondAttribute="leading" id="Y6L-Ze-LvW"/>
+                            <constraint firstItem="OEq-eC-Qer" firstAttribute="centerX" secondItem="A0e-Tf-MQo" secondAttribute="centerX" id="hdY-kL-zSG"/>
+                            <constraint firstItem="dkG-9k-Tm3" firstAttribute="top" secondItem="ffs-hJ-cWH" secondAttribute="bottom" constant="8" symbolic="YES" id="ikc-mC-3XU"/>
+                            <constraint firstItem="gsZ-Rk-odd" firstAttribute="leading" secondItem="A0e-Tf-MQo" secondAttribute="leadingMargin" id="l7U-xw-hdy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dkG-9k-Tm3" secondAttribute="trailing" id="ned-Xo-c6J"/>
+                            <constraint firstItem="dkG-9k-Tm3" firstAttribute="width" secondItem="A0e-Tf-MQo" secondAttribute="width" multiplier="0.2" id="nm6-RW-b3j"/>
+                            <constraint firstItem="OEq-eC-Qer" firstAttribute="top" secondItem="gsZ-Rk-odd" secondAttribute="bottom" constant="8" symbolic="YES" id="obL-Cj-qpV"/>
+                            <constraint firstItem="KDb-zZ-deC" firstAttribute="top" secondItem="ffs-hJ-cWH" secondAttribute="bottom" id="yro-av-tqW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="countdownView" destination="dkG-9k-Tm3" id="5Lm-Zy-DZ2"/>
+                        <outlet property="merchantDescriptionTextView" destination="gsZ-Rk-odd" id="RCH-Od-gKY"/>
+                        <outlet property="merchantImageView" destination="KDb-zZ-deC" id="U1m-zl-cVx"/>
+                        <outlet property="subscriptionButton" destination="OEq-eC-Qer" id="T66-C2-Ied"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="liY-Qg-BeI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1871" y="92"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kp6-Hd-77g">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mCz-g1-shM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="imb-Mq-trf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lEz-BM-Q53"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tvf-Zw-d8l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60" y="91.304347826086968"/>
+        </scene>
+    </scenes>
+</document>
